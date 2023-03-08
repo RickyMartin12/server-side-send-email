@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
+const port = process.env.PORT || 3000;
 app.use(cors());
 
 let transporter = nodemailer.createTransport({
@@ -42,6 +43,6 @@ app.get('/sendEmail', (req, res) => {
     });
 });
 
-app.listen(9000, () => {
+app.listen(port, () => {
     console.log('server is listening on port 9000');
 });
